@@ -1,0 +1,19 @@
+- name: modifying nginx.conf 
+  template:
+   src: nginx.conf.j2 
+   dest: /etc/nginx/
+  notify: restart nginx
+
+- name: Modifying nginx file
+  template:
+    src: default.conf.j2
+    dest: /etc/nginx/conf.d/
+  notify: restart nginx
+
+- name: Enable nginx at starting
+  systemd:
+    name: nginx
+    enabled: yes
+    daemon_reload: yes
+
+

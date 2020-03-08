@@ -1,0 +1,5 @@
+---
+# vars file for ansible-nginx-role
+nginx_packages: nginx
+nginx_port: 80
+nginx_server : localhost

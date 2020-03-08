@@ -1,0 +1,8 @@
+---
+- name: checking status
+  command: systemctl status nginx
+  register: nginx_status
+
+- debug:
+    var: nginx_status
+...
